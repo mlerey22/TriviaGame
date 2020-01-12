@@ -1,26 +1,30 @@
 $( document ).ready(function() {
-    //  Variable that will hold our setInterval that runs the stopwatch
-var intervalId;
 
-// prevents the clock from being sped up unnecessarily
+
 var clockRunning = false;
-var time = 90;
-    
-intervalId = setInterval(count, 1000);
+var time = 10;
+var currentTime;
+document.getElementById("end").style.display = "none";
+console.log(time);
+
+if (!clockRunning) {
+    intervalId = setInterval(count, 1000);
+    clockRunning = true;
+}
 
 function count() {
 
-    //  TODO: increment time by 1, remember we cant use "this" here.
     time--;
-    //  TODO: Get the current time, pass that into the timeConverter function,
-    //        and save the result in a variable.
-    let currentTime = timeConverter(time);
-    //  TODO: Use the variable you just created to show the converted time in the "display" div.
-    $("#timer").text(currentTime);
+    check(time)
+   
+    //currentTime = timeConverter(time);
+    
+    $("#timer").text(time);
+    
+    
 }
-function timeConverter(t) {
+/*function timeConverter(t) {
 
-    //  Takes the current time in seconds and convert it to minutes and seconds (mm:ss).
     var minutes = Math.floor(t / 60);
     var seconds = t - (minutes * 60);
 
@@ -35,5 +39,22 @@ function timeConverter(t) {
     }
 
     return minutes + ":" + seconds;
-}$("#timer").text(time);
+}*/
+$("#timer").text(time);
+function check(){
+if (time == 0) {
+    console.log("yay")
+    clearInterval(intervalId);
+    clockRunning = false;
+    endGame()
+    document.getElementById("end").style.display = "initial";
+    $("#game").css("display", "none");
+}}
+
+function endGame() {
+    document.getElementById("end").style.display = "initial";
+    $("#questions").css("display", "none");
+
+}
+
 });
