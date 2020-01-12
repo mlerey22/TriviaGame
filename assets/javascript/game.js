@@ -1,5 +1,11 @@
 $( document ).ready(function() {
 
+  var correctAnswers = 0;
+  var incorrectAnswers = 0;
+  sessionStorage.setItem("answer1", "a");
+  sessionStorage.setItem("answer2", "c")
+  var questions = ["1", "2", "3"]
+  var answers = ["a", "c", "c"]
 
 var clockRunning = false;
 var time = 10;
@@ -52,8 +58,37 @@ if (time == 0) {
 }}
 
 function endGame() {
-    document.getElementById("end").style.display = "initial";
-    $("#questions").css("display", "none");
+    $("#end").css("display", "initial");
+    $("form").css("display", "none");
+    $("timer").css("display", "none");
+    console.log()
+    validateQuestions()
+    
+
+}
+
+function validateQuestions() {        
+        
+          var submitted = $('input[name=q1]:checked').val();
+          if (submitted == answers[1]){
+            correctAnswers++;
+            console.log(correctAnswers);
+        
+  } else {
+      incorrectAnswers++;
+  }
+  var submitted = $('input[name=q2]:checked').val();
+  if (submitted == answers[2]){
+    correctAnswers++;
+    console.log(correctAnswers);
+
+} else {
+incorrectAnswers++;
+}
+
+$("#end").html("Correct: " + correctAnswers + "<br>" + "Incorrect: " + incorrectAnswers + "<br>")
+
+
 
 }
 

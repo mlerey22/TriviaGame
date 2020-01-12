@@ -13,19 +13,24 @@
 <body>
     <h1>Trivia!</h1>
     <div id="end">
-        <h2 id="correct"></h2>
-        <h2 id="incorrect"></h2>
 
     </div>
-    <div id="timer"></div>
-    <div id="game">
-    <form id="questions">
-        1.) What is the world's biggest Island? <br>
-        <input type="radio" name="bigIsland" value="correct" checked>Greenland<br>
-  <input type="radio" name="bigIsland" value="incorrect">Hawaii<br>
-  <input type="radio" name="bigIsland" value="incorrect">Puerto Rico
-</form>
-   </div>
+   Time Left: <br> <div id="timer"></div>
+    <form class="gameForm" id="q1" data-question="1">
+        <h5>What is the world's largest Island?</h5>
+        
+         <input type="radio" name="q1" value="a" />Greenland <br>
+         <input type="radio" name="q1" value="b" />Guam <br>
+          <input type="radio" name="q1" value="c" />Puerto Rico <br>
+      </form>
+      <form class="gameForm" id="q2" data-question="2">
+        <h5>Where is Nigeria?</h5>
+        
+         <input type="radio" name="q2" value="a" />Australia <br>
+         <input type="radio" name="q1" value="b" />Europe <br>
+          <input type="radio" name="q1" value="c" />Africa <br>
+      </form>
+
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="assets/javascript/game.js"></script>         
 </body>
