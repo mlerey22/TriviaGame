@@ -11,26 +11,33 @@
     <title>Trivia Game</title>
 </head>
 <body>
-    <h1>Trivia!</h1>
+    <div class="jumbotron">
+    <h1 class="text-center">Trivia!</h1>
+</div>
     <div id="end">
 
     </div>
    Time Left: <br> <div id="timer"></div>
-    <form class="gameForm" id="q1" data-question="1">
+   <div id="triviaGame" class="card justify-content-center">
+    <form>
+
+    <div class="gameForm form-group" id="q1" data-question="1">
         <h5>What is the world's largest Island?</h5>
         
          <input type="radio" name="q1" value="a" />Greenland <br>
          <input type="radio" name="q1" value="b" />Guam <br>
           <input type="radio" name="q1" value="c" />Puerto Rico <br>
-      </form>
-      <form class="gameForm" id="q2" data-question="2">
+      </div>
+    
+      <div class="gameForm form-group" id="q1" data-question="1">
         <h5>Where is Nigeria?</h5>
         
          <input type="radio" name="q2" value="a" />Australia <br>
-         <input type="radio" name="q1" value="b" />Europe <br>
-          <input type="radio" name="q1" value="c" />Africa <br>
+         <input type="radio" name="q2" value="b" />Europe <br>
+          <input type="radio" name="q2" value="c" />Africa <br>
+        </div>
       </form>
-
+</div>
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="assets/javascript/game.js"></script>         
 </body>
